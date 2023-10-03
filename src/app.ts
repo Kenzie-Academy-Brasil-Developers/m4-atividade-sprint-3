@@ -21,7 +21,7 @@ app.put("/", (req: Request, res: Response) => {
 })
 
 app.delete("/", (req: Request, res: Response) => {
-    res.send("Exclusão efetuada com sucesso.")
+    res.send("Exclusão efetuada com sucesso.");
 })
 
 const port = 3000;
