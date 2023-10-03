@@ -1,28 +1,11 @@
-import express, { Request, Response, json } from "express";
+import express, { json } from "express";
+import { booksRouter } from "./routes/books.routes";
 
 const app = express();
 
 app.use(json());
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("Leitura efetuada com sucesso.");
-})
-
-app.post("/", (req: Request, res: Response) => {
-    res.send("Criação efetuada com sucesso.");
-})
-
-app.patch("/", (req: Request, res: Response) => {
-    res.send("Atualização parcial efetuada com sucesso.");
-})
-
-app.put("/", (req: Request, res: Response) => {
-    res.send("Atualização efetuada com sucesso.");
-})
-
-app.delete("/", (req: Request, res: Response) => {
-    res.send("Exclusão efetuada com sucesso.");
-})
+app.use("/books", booksRouter);
 
 const port = 3000;
 
